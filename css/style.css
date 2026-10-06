@@ -122,6 +122,7 @@ body{
 
 .message_box{
     min-height: 360px;
+    max-height: 360px;
     min-width: 400px;
     margin: 10px 0;
     overflow: auto;
@@ -140,3 +141,59 @@ body{
     font-weight: bold;
     font-size: 14px;
 }
+
+.message_box p{
+    word-break: break-all;
+    font-size: 13px;
+}
+
+.your_message{
+    border: 1px solid var(--blue);
+    border-radius: 10px 10px 10px 0;
+}
+
+.your_message span{
+    color: var(--blue);
+}
+
+.others_message{
+    border: 1px solid var(--grey);
+    border-radius: 10px 10px 0 10px;
+}
+
+.others_message span{
+    color: var(--black);
+}
+
+.date{
+    color: var(--white);
+}
+
+.send_message{
+    border-top: 1px solid var(--grey);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.send_message textarea{
+    width: 100%;
+    resize: none;
+    border-radius: 6px;
+    outline: 0;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.send_message input[type='submit']{
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 10px;
+    border-radius: 6px;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 13px;
+    border-top: 1px solid var(--blue);
+    cursor: pointer;
+}
+

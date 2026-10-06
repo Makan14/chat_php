@@ -14,17 +14,17 @@
 
   <form action="" class="form_connexion_inscription">
     <h1>CONNEXION</h1>
-    <p class="message_error">Mot de passe incorrect </p>
+    <p class="message_error"></p>
 
     <label>Adresse Mail</label>
     <input type="email" name="email">
 
     <label>Mot de passe</label>
-    <input type="password" name="mdp1">
+    <input type="password" name="mdp1" class="mdp1">
     <input type="submit" value="Connexion">
-    <p class="link">Vous avez un compte ? <a href="inscription.html">Créer un compte</a></p>
+    <p class="link">Vous n'avez pas de compte ? <a href="inscription.php">Créer un compte</a></p>
   </form>
   
-  <!-- <script src='js/main.js'></script> -->
+  <script src='js/main.js'></script>
 </body>
 </html>

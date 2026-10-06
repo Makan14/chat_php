@@ -20,12 +20,12 @@
     <input type="email" name="email">
 
     <label>Mot de passe</label>
-    <input type="password" name="mdp1">
+    <input type="password" name="mdp1" class="mdp1">
 
     <label>Confirmation mot de passe</label>
     <input type="password" name="mdp2" class="mdp2">
     <input type="submit" value="Inscription">
-    <p class="link">Vous avez un compte ? <a href="index.html">Se connecter</a></p>
+    <p class="link">Vous avez un compte ? <a href="index.php">Se connecter</a></p>
   </form>
   
   <script src='js/main.js'></script>
