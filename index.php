@@ -25,6 +25,6 @@
     <p class="link">Vous n'avez pas de compte ? <a href="inscription.php">Créer un compte</a></p>
   </form>
   
-  <script src='js/main.js'></script>
+  <!-- <script src='js/main.js'></script> -->
 </body>
 </html>
