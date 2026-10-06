@@ -6,33 +6,26 @@ Application de messagerie instantanée : inscription, connexion et salon de disc
 
 | Partie | Technologie | Rôle |
 |---|---|---|
-| `index.html` | HTML + CSS + JS | La porte d'entrée (connexion 🔑) |
-| `inscription.html` | HTML + CSS + JS | Le bureau d'inscription (nouveau compte 📝) |
-| `chat.html` | HTML + CSS + JS | Le salon de discussion (les messages 💬) |
+| `index.php` | PHP + HTML + CSS | La porte d'entrée (connexion 🔑) |
+| `inscription.php` | PHP + HTML + CSS + JS | Le bureau d'inscription (nouveau compte 📝) |
+| `chat.php` | PHP + HTML + CSS + JS | Le salon de discussion (les messages 💬) |
 | `css/` | CSS | Les vêtements (le style 👕) |
 | `js/` | JavaScript | Les muscles (l'interactivité 💪) |
-| Backend (bientôt) | PHP + MySQL | Le cerveau (comptes et messages 🧠) — ⏳ en construction |
+| Base `chat_php` | MySQL | Le carnet d'adresses (comptes 📓) — ✅ créée |
 
-## 🚀 Démarrage
+## 🗄️ Base de données
 
-### 1. Lancer XAMPP
+Table `utilisateur` :
 
-Ouvrez le **XAMPP Control Panel** et démarrez **Apache** (et **MySQL** quand le backend arrivera).
+| Colonne | Type | Rôle |
+|---|---|---|
+| `id_u` | INT, PRIMARY, AUTO_INCREMENT | Le numéro de ticket 🎫 |
+| `email` | VARCHAR(255) | L'adresse unique du compte 📧 |
+| `mdp` | VARCHAR(255) | Le mot de passe crypté 🔐 |
 
-### 2. Placer le projet
-
-Le dossier doit se trouver ici :
-
-C:\xampp\htdocs\chat_php
-
-### 3. Ouvrir dans le navigateur
-
-http://localhost/chat_php
-
-## ✅ Fonctionnalités
-
-- [x] Page de connexion (`index.html`)
-- [x] Page d'inscription (`inscription.html`)
-- [x] Salon de discussion — maquette (`chat.html`)
-- [ ] Comptes utilisateurs en PHP + MySQL ⏳
-- [ ] Envoi et réception des messages ⏳
+```sql
+CREATE TABLE utilisateur (
+    id_u INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    mdp VARCHAR(255) NOT NULL
+);

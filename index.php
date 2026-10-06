@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <form action="" class="form_connexion_inscription">
+  <form action="" method="POST" class="form_connexion_inscription" >
     <h1>CONNEXION</h1>
     <p class="message_error"></p>
 
@@ -21,7 +21,7 @@
 
     <label>Mot de passe</label>
     <input type="password" name="mdp1" class="mdp1">
-    <input type="submit" value="Connexion">
+    <input type="submit" value="Connexion" name="button_con">
     <p class="link">Vous n'avez pas de compte ? <a href="inscription.php">Créer un compte</a></p>
   </form>
   
