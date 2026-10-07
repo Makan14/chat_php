@@ -12,6 +12,28 @@
 </head>
 <body>
 
+  <?php  
+      //if(isset($_POST['bouton_con'])) 📮 — "Est-ce que le bouton Connexion a été cliqué ?" $_POST = l'enveloppe avec les données du formulaire. isset = "existe ?". Si personne n'a cliqué, on ne fait rien !
+    if(isset($_POST['button_con'])){
+      // si le formulaire est envoyé
+      // se connecter à la bdd
+      //include "connexion_bdd.php" 🌉 — "Colle ici le contenu du fichier de connexion" = on ouvre le pont vers MySQL.
+      include "connexion_bdd.php";
+
+      // extraire les infos du formulaire
+      //extract($_POST) 🪄 — "Transforme chaque donnée en variable" : $_POST['email'] devient $email comme par magie.
+      extract($_POST);
+
+      // verifions si ls champs sont vides
+      if(isset($email) && isset($mdp) && $email != "" && $mdp !=""){
+
+      }else{
+        // si ls champs sont vides
+        $error = "Veuillez remplir tous les champs !";
+      }
+    }
+  ?>
+
   <form action="" method="POST" class="form_connexion_inscription" >
     <h1>CONNEXION</h1>
     <p class="message_error"></p>
