@@ -24,8 +24,8 @@
       //extract($_POST) 🪄 — "Transforme chaque donnée en variable" : $_POST['email'] devient $email comme par magie.
       extract($_POST);
 
-      // verifions si ls champs sont vides
-      if(isset($email) && isset($mdp) && $email != "" && $mdp !=""){
+      // verifions si ls champs existe et s'il sont vide ou rempli
+      if(isset($email) && isset($mdp) && $email !="" && $mdp !=""){
 
       }else{
         // si ls champs sont vides
@@ -36,7 +36,15 @@
 
   <form action="" method="POST" class="form_connexion_inscription" >
     <h1>CONNEXION</h1>
-    <p class="message_error"></p>
+    <p class="message_error">
+      <?php 
+        // affichons l erreur
+        if(isset($error)){
+          echo $error;
+        }
+      ?>
+
+    </p>
 
     <label>Adresse Mail</label>
     <input type="email" name="email">
