@@ -26,7 +26,14 @@
 
       // verifions si ls champs existe et s'il sont vide ou rempli
       if(isset($email) && isset($mdp) && $email !="" && $mdp !=""){
-
+        // verifions si ls identifiants sont justes
+        $req = mysqli_query($con, "SELECT * FROM utilisateur WHERE email = '$email' AND mdp = '$mdp'");
+        if(mysqli_num_rows($req) > 0){
+          // si ls ids sont justes
+        }else{
+          // si non
+          $error = "Email ou mots de passe incorrecte(s) !";
+        }
       }else{
         // si ls champs sont vides
         $error = "Veuillez remplir tous les champs !";
