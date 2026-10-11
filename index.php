@@ -1,3 +1,8 @@
+<?php 
+// démarrer la session
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
@@ -25,11 +30,15 @@
       extract($_POST);
 
       // verifions si ls champs existe et s'il sont vide ou rempli
-      if(isset($email) && isset($mdp) && $email !="" && $mdp !=""){
+      if(isset($email) && isset($mdp1) && $email !="" && $mdp1 !=""){
         // verifions si ls identifiants sont justes
-        $req = mysqli_query($con, "SELECT * FROM utilisateur WHERE email = '$email' AND mdp = '$mdp'");
+        $req = mysqli_query($con, "SELECT * FROM utilisateur WHERE email = '$email' AND mdp = '$mdp1'");
         if(mysqli_num_rows($req) > 0){
           // si ls ids sont justes
+          // creation d1 session qui contient l email
+          $_SESSION['user'] = $email; 
+          // redirection vers la page chat
+          header("location:chat.php"); 
         }else{
           // si non
           $error = "Email ou mots de passe incorrecte(s) !";
