@@ -25,6 +25,12 @@
 
       // verifions si ls champs existe et s'il sont vide ou rempli
       if(isset($email) && isset($mdp1) && $email !="" && $mdp1 !="" && isset($mdp2) && $mdp2 !=""){
+        if($mdp2 != $mdp1){
+          // s ils sont diff
+          $error = "Les mots de passes sont differents !";
+        }else{
+          // si non
+        }
 
       }else{
         $error = "Veuillez remplir tous les champs !";
@@ -34,7 +40,14 @@
 
   <form action="" method="POST" class="form_connexion_inscription">
     <h1>INSCRIPTION</h1>
-    <p class="message_error"></p>
+    <p class="message_error">
+      <?php 
+        // affichons l erreur
+        if(isset($error)){
+          echo $error;
+        }
+      ?>
+    </p>
 
     <label>Adresse Mail</label>
     <input type="email" name="email">
