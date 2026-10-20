@@ -8,7 +8,7 @@
   <meta name='author' content='Makan MACALOU'>
   <meta name='keywords' content=', , , '>
   <link rel='stylesheet' href='css/style.css'>
-  <title>Connexion | Chat</title>
+  <title>Inscription</title>
 </head>
 <body>
 
@@ -29,7 +29,25 @@
           // s ils sont diff
           $error = "Les mots de passes sont differents !";
         }else{
-          // si non
+          // si non, verifions si l email existe
+          $req = mysql_query($con, "SELECT * FROM utilisateur WHERE email = '$email'"); 
+          if(mysqli_num_rows($req) == 0){
+            // si ca n existe pas, creons le compte
+              $req = mysqli_query($con , "INSERT INTO utilisateur VALUES (NULL, '$email', '$mdp1')");
+              if($req){
+                // si le compte à été créer, créons 1 variable pr afficher 1 msg dns la page de connexion
+                $_SESSION['message'] = "<p class='message'>Votre compte a été créer avec succès !</p>";
+                // redirection vers la page de connexion
+                header("Location:index.php");
+                
+              }else{
+                // si non
+                $error = "Inscription Echouée !";
+              }
+          }else{
+            // si ca existe
+            $error = "Cet email existe déjà !";
+          }
         }
 
       }else{

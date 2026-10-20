@@ -39,6 +39,9 @@ session_start();
           $_SESSION['user'] = $email; 
           // redirection vers la page chat
           header("location:chat.php"); 
+
+          // detruire la variable du message d inscription
+          unset($_SESSION['message']);
         }else{
           // si non
           $error = "Email ou mots de passe incorrecte(s) !";
@@ -52,6 +55,12 @@ session_start();
 
   <form action="" method="POST" class="form_connexion_inscription" >
     <h1>CONNEXION</h1>
+    <?php
+      // affichons le msg qui dit qu un compte a été creer
+      if(isset($_SESSION['message'])){
+        echo$_SESSION['message'];
+      }
+    ?>
     <p class="message_error">
       <?php 
         // affichons l erreur
