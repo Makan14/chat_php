@@ -13,7 +13,7 @@
 <body>
 
   <?php
-    if(isset($POST['button_inscription'])){
+    if(isset($_POST['button_inscription'])){
        // si le formulaire est envoyé
       // se connecter à la bdd
       //include "connexion_bdd.php" 🌉 — "Colle ici le contenu du fichier de connexion" = on ouvre le pont vers MySQL.
@@ -30,7 +30,7 @@
           $error = "Les mots de passes sont differents !";
         }else{
           // si non, verifions si l email existe
-          $req = mysql_query($con, "SELECT * FROM utilisateur WHERE email = '$email'"); 
+          $req = mysqli_query($con, "SELECT * FROM utilisateur WHERE email = '$email'");
           if(mysqli_num_rows($req) == 0){
             // si ca n existe pas, creons le compte
               $req = mysqli_query($con , "INSERT INTO utilisateur VALUES (NULL, '$email', '$mdp1')");

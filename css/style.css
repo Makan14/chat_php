@@ -197,3 +197,13 @@ body{
     cursor: pointer;
 }
 
+.message{
+    padding: 10px 0;
+    margin: 5px 0;
+    text-align: center;
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 12px;
+    border-radius: 6px;
+}
+
