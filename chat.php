@@ -6,7 +6,7 @@
         header("location:index.php"); 
         exit; // ← 👋 STOP : on arrête TOUT ici, tout de suite
     }
-    $user = $_SESSION['user'] //email de l utilisateur 
+    $user = $_SESSION['user']; //email de l utilisateur 
  ?>
 
 <!DOCTYPE html>

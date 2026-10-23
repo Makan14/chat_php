@@ -39,6 +39,7 @@ session_start();
           $_SESSION['user'] = $email; 
           // redirection vers la page chat
           header("location:chat.php"); 
+          exit;
 
           // detruire la variable du message d inscription
           unset($_SESSION['message']);
