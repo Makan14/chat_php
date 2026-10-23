@@ -36,7 +36,7 @@
               $req = mysqli_query($con , "INSERT INTO utilisateur VALUES (NULL, '$email', '$mdp1')");
               if($req){
                 // si le compte à été créer, créons 1 variable pr afficher 1 msg dns la page de connexion
-                $_SESSION['message'] = "<p class='message'>Votre compte a été créer avec succès !</p>";
+                $_SESSION['message'] = "<p class='message_inscription'>Votre compte a été créer avec succès !</p>";
                 // redirection vers la page de connexion
                 header("Location:index.php");
                 

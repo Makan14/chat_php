@@ -1,3 +1,13 @@
+<!-- start 1 session -->
+ <?php
+    session_start();
+    if(!isset($_SESSION['user'])){
+        // si l utilisateur n est pas conecté redirection vers la page de connexion
+        header("location:index.php"); 
+    }
+    $user = $_SESSION['user'] //email de l utilisateur 
+ ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,12 +18,12 @@
   <meta name='author' content='Makan MACALOU'>
   <meta name='keywords' content=', , , '>
   <link rel='stylesheet' href='css/style.css'>
-  <title>makan@gmail.com | Chat</title>
+  <title><?=$user?> | Chat</title>
 </head>
 <body>
     <div class="chat">
         <div class="button-email">
-            <span>makan@gmail.com</span>
+            <span><?=$user?></span>
             <a href="#" class="deconnexion_btn">Déconnexion</a>
         </div>
 

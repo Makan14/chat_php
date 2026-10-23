@@ -120,6 +120,7 @@ body{
     border-radius: 6px;
 }
 
+ /* msg du chat */
 .message_box{
     min-height: 360px;
     max-height: 360px;
@@ -197,7 +198,7 @@ body{
     cursor: pointer;
 }
 
-.message{
+/* .message_inscription{
     padding: 10px 0;
     margin: 5px 0;
     text-align: center;
@@ -205,5 +206,5 @@ body{
     color: var(--white);
     font-size: 12px;
     border-radius: 6px;
-}
+} */
 
