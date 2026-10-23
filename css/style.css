@@ -198,7 +198,7 @@ body{
     cursor: pointer;
 }
 
-/* .message_inscription{
+.message_inscription{
     padding: 10px 0;
     margin: 5px 0;
     text-align: center;
@@ -206,5 +206,5 @@ body{
     color: var(--white);
     font-size: 12px;
     border-radius: 6px;
-} */
+}
 

@@ -4,6 +4,7 @@
     if(!isset($_SESSION['user'])){
         // si l utilisateur n est pas conecté redirection vers la page de connexion
         header("location:index.php"); 
+        exit; // ← 👋 STOP : on arrête TOUT ici, tout de suite
     }
     $user = $_SESSION['user'] //email de l utilisateur 
  ?>
