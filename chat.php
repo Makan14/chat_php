@@ -25,24 +25,16 @@
     <div class="chat">
         <div class="button-email">
             <span><?=$user?></span>
-            <a href="#" class="deconnexion_btn">Déconnexion</a>
+            <a href="deconnexion.php" class="deconnexion_btn">Déconnexion</a>
         </div>
 
         <!-- messages -->
          <div class="message_box">
-            <div class="message your_message">
-                <span>Vous</span>
-                <p>Comment ça va ?</p>
-                <p class="date">26-12-01 00:25:26</p>
-            </div>
-
-            <div class="message others_message">
-                <span>azerty@gmail.com</span> 
-                <p>Oui ça va merci</p>
-                <p class="date">26-12-01 00:25:26</p> 
-            </div>
-
-
+            <?php
+            // inclure la page message.php 
+            include "messages.php"
+            ?>
+        
          </div>
 
          <!-- fin messages -->
