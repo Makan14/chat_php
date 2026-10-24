@@ -36,8 +36,29 @@
             ?>
         
          </div>
+        <!-- fin messages -->
 
-         <!-- fin messages -->
+        <?php
+            // envoi ds msg 
+            if(isset($_POST['send'])){
+                // recuperons le msg
+                $message = $_POST['message'];
+                // connexion à la bdd
+                include("connexion_bdd.php");
+                // verifions si le champs n est ps vide
+                if(isset($message) && $message != ""){
+                    // inserer le msg dns la bdd
+                    $req = mysqli_query($con, "INSERT INTO messages VALUES(NULL, '$user', '$message',NOW()");
+                    // on actualise la page
+                    header('location:chat.php');
+                }else{
+                    // si le msg est vide, on actualise la page
+                    header('location:chat.php');
+                }
+            }
+        ?>
+
+
           <form action="" class="send_message" method="POST">
             <textarea name="message" cols="30" placeholder="Votre message" ></textarea>
             <input type="submit" value="Envoyé" name="Send"> 
