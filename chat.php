@@ -29,13 +29,7 @@
         </div>
 
         <!-- messages -->
-         <div class="message_box">
-            <?php
-            // inclure la page message.php 
-            include "messages.php"
-            ?>
-        
-         </div>
+         <div class="message_box">Chargement....</div>
         <!-- fin messages -->
 
         <?php
