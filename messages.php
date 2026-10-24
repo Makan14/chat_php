@@ -27,8 +27,8 @@
                     ?>
                          <div class="message others_message">
                             <span><?=$row['email']?></span> 
-                            <p><?$row['msg']?></p>
-                            <p class="date"><?$row['date']?></p> 
+                            <p><?=$row['msg']?></p>
+                            <p class="date"><?=$row['date']?></p> 
                         </div>
                     <?php
 

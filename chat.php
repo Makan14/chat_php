@@ -48,7 +48,7 @@
                 // verifions si le champs n est ps vide
                 if(isset($message) && $message != ""){
                     // inserer le msg dns la bdd
-                    $req = mysqli_query($con, "INSERT INTO messages VALUES(NULL, '$user', '$message',NOW()");
+                    $req = mysqli_query($con, "INSERT INTO messages VALUES(NULL, '$user', '$message',NOW())");
                     // on actualise la page
                     header('location:chat.php');
                 }else{
@@ -61,7 +61,7 @@
 
           <form action="" class="send_message" method="POST">
             <textarea name="message" cols="30" placeholder="Votre message" ></textarea>
-            <input type="submit" value="Envoyé" name="Send"> 
+            <input type="submit" value="Envoyé" name="send"> 
           </form>
     </div>
 </body>
