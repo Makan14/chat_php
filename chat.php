@@ -64,5 +64,10 @@
             <input type="submit" value="Envoyé" name="send"> 
           </form>
     </div>
+
+    <script>
+        // on actualise automatiquement le chat en utilisant AJAX
+        var message_box = document.querySelector('.message_box')
+    </script>
 </body>
 </html>
