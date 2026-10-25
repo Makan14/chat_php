@@ -61,7 +61,17 @@
 
     <script>
         // on actualise automatiquement le chat en utilisant AJAX
-        var message_box = document.querySelector('.message_box')
+        var message_box = document.querySelector('.message_box');
+        setInterval(function() => {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    message_box.innerHTML = this.responseText
+                }
+            };
+            xhttp.open("GET","message.php", true); //recup de la page message
+            xhttp.send();
+        }, 500); //actualiser le caht ts ls 500 ms
     </script>
 </body>
 </html>

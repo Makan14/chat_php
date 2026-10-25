@@ -1,5 +1,6 @@
  
  <?php
+ session_start();
 //  si l utilisateur c connecter
     if(isset($_SESSION['user'])){
         // connexion à la bdd
