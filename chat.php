@@ -45,9 +45,11 @@
                     $req = mysqli_query($con, "INSERT INTO messages VALUES(NULL, '$user', '$message',NOW())");
                     // on actualise la page
                     header('location:chat.php');
+                    exit;
                 }else{
                     // si le msg est vide, on actualise la page
                     header('location:chat.php');
+                    exit;
                 }
             }
         ?>
@@ -69,7 +71,7 @@
                     message_box.innerHTML = this.responseText
                 }
             };
-            xhttp.open("GET","message.php", true); //recup de la page message
+            xhttp.open("GET","messages.php", true); //recup de la page message
             xhttp.send();
         }, 500); //actualiser le caht ts ls 500 ms
     </script>
